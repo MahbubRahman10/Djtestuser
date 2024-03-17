@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	{% if user.is_authenticated %}
+	
+	<li style="margin-top: 3px;"><a href="/question">প্রশ্ন করুন</a></li>
+	<li class='active' style="margin-top: 3px;"><a href='#'>আমার একাউন্ট</a>
+		<ul>
+			<li><a href="/user/profile/{{ user.id }}/">প্রোফাইল</a></li>
+			<li><a href="/logout"> লগ-আঊট</a></li> 
+		</ul>
+	</li>
+	{% else %}
+	<li style="margin-top: 3px;"><a href='/login'>লগিন</a></li>
+	<li style="margin-top: 3px;"> <a href='/register'>রেজিস্টার</a></li>
+	{% endif %}
+
+</body>
+</html>

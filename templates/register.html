@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">রেজিস্টার</div>
+        <div class="panel-body">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+            <form class="form-horizontal" role="form" method="POST" action="register">
+                {% csrf_token %}
+                {{ form }}
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary" >
+                            রেজিস্টার করুন
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
